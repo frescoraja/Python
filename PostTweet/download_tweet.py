@@ -11,15 +11,15 @@ consumer_secret = config.consumer_secret
 access_key = config.access_key
 access_secret = config.access_secret
 
-def download_tweets():
-    username = "elonmusk"
+def download_tweets(name, num):
+    username = name
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
 
     api = tweepy.API(auth)
 
-    num_tweets = 100
+    num_tweets = num
 
     tweets = api.user_timeline(screen_name = username, count = num_tweets)
 
@@ -33,4 +33,6 @@ def download_tweets():
             writer.writerows(my_tweets)
 
 if __name__ == '__main__':
-    download_tweets()
+    username = sys.argv[1]
+    num_tweets = sys.argv[2]
+    download_tweets(username, num_tweets)

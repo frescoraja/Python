@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Books</h1>
+
+<ul class="list-group">
+  {% for book in books %}
+  <li class="list-group-item list-group-item-info">
+    <p><strong>{{ book.title }}</strong></p>
+    <p><em>{{ book.isbn }}</em></p>
+    <p>{{ book.notes }}</p>
+  </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

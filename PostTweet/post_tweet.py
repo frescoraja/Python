@@ -11,5 +11,5 @@ auth.set_access_token(access_key, access_secret)
 
 api = tweepy.API(auth)
 
-api.update_status(status="WOOHOO TEWEETING! AGAIN!!! and what not ..")
-api.update_with_media("elonmusk_tweets.png", "Elon musk's most commonly used words in last 100 tweets")
+# api.update_status(status="Using PYTHON and the tweepy library to hit up the Twitter API.. TWEET TWEET. !")
+api.update_with_media("POTUS_tweets.png","President Obama's word cloud from his latest 200 tweets..")
